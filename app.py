@@ -14,11 +14,11 @@ def email_event():
     print("CaseId:", case_id)
     print("Subject:", subject)
     print("Body:", body)
-  #  prompt = f"An email was received:\nSubject: {subject}\nBody: {body}\n\nWrite a professional reply:"
-   # reply = call_mistral(prompt)
+    prompt = f"An email was received:\nSubject: {subject}\nBody: {body}\n\nWrite a professional reply:"
+    reply = call_mistral(prompt)
 
-  #  print(f"Generated Reply for Case {case_id}:\n{reply}")
-    return jsonify({"status": "success", "reply": 'Test reply received'}), 200
+    print(f"Generated Reply for Case {case_id}:\n{reply}")
+    return jsonify({"status": "success", "reply": reply}), 200
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
