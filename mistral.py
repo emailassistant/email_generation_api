@@ -1,7 +1,7 @@
 import requests
 import os
 
-TOGETHER_API_KEY = os.getenv("97c2e8edcba1ce4c7bd074c9472637b680ea6e408484c5d3432d4042d8e81aea")
+TOGETHER_API_KEY = os.getenv("tgp_v1_9cSNx9v3VRIJ8_WkAJl0c33j0Lg7H1E6l77RtQG2HXE")
 
 def call_mistral(prompt):
     url = "https://api.together.xyz/v1/completions"
