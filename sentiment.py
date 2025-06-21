@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 
 # Load pre-trained DeBERTa model and tokenizer
-model_name = "microsoft/deberta-v3-base"
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=3)
