@@ -9,7 +9,8 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=3)
 
 # Mapping class index to sentiment label
-id2label = {-1: "negative", 0: "neutral", 1: "positive"}
+# Updated id2label to include mapping for class index 2
+id2label = {0: "negative", 1: "neutral", 2: "positive"}
 
 # Define the sentiment analysis function
 def analyze_sentiment(text):
