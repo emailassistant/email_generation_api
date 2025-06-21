@@ -1,17 +1,18 @@
 import subprocess
-import pkg_resources
+import sys
+from importlib.metadata import distributions
 
 from flask import Flask, request, jsonify
 #from mistral import call_mistral
 from sentiment import analyze_sentiment
 
-required = {'transformers', 'torch', 'scikit-learn'}
-installed = {pkg.key for pkg in pkg_resources.working_set}
+required = {'transformers', 'torch', 'scikit-learn', 'protobuf'}
+installed = {dist.metadata['Name'].lower() for dist in distributions()}
 missing = required - installed
 
 if missing:
     print(f"Installing missing packages: {missing}")
-    subprocess.check_call(["pip", "install", *missing])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", *missing])
 
 app = Flask(__name__)
 
