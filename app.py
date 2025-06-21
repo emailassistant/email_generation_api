@@ -15,7 +15,7 @@ def email_event():
     print("Subject:", subject)
     print("Body:", body)
     #prompt = f"An email was received:\nSubject: {subject}\nBody: {body}\n\nWrite a professional reply:"
-    #reply = call_mistral(prompt) test git commit
+    #reply = call_mistral(prompt) test git commit1
 
     #print(f"Generated Reply for Case {case_id}:\n{reply}")
     return jsonify({"status": "success", "reply": 'reply sent'}), 200
