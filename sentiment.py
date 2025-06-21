@@ -25,14 +25,4 @@ def analyze_sentiment(text):
         confidence = probs[0][pred_class].item()
         return sentiment, round(confidence, 2)
 
-# Example usage
-if __name__ == "__main__":
-    texts = [
-        "I'm very happy with your service!",
-        "This was okay, not great but not bad either.",
-        "I'm extremely disappointed and frustrated."
-    ]
 
-    for text in texts:
-        sentiment, confidence = analyze_sentiment(text)
-        print(f"Text: {text}\nSentiment: {sentiment} (Confidence: {confidence})\n")
