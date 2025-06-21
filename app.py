@@ -30,5 +30,6 @@ def email_event():
     #print(f"Generated Reply for Case {case_id}:\n{reply}")
     return jsonify({"status": "success", "reply": reply}), 200
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 10000))  # Fallback to 10000 if PORT not set
+    app.run(host='0.0.0.0', port=port)
