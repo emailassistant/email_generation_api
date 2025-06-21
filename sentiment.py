@@ -5,8 +5,9 @@ import torch.nn.functional as F
 # Lightweight 3-class sentiment model
 model_name = "cardiffnlp/twitter-roberta-base-sentiment"
 
+# Load tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=3)
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
 # Mapping class index to sentiment label
 # Updated id2label to include mapping for class index 2
