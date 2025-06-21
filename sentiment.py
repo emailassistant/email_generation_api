@@ -2,8 +2,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import torch.nn.functional as F
 
-# Load pre-trained DeBERTa model and tokenizer
-model_name = "distilbert-base-uncased-finetuned-sst-2-english"
+# Lightweight 3-class sentiment model
+model_name = "cardiffnlp/twitter-roberta-base-sentiment"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=3)
