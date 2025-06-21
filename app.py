@@ -11,8 +11,7 @@ required = {
     'torch',
     'scikit-learn',
     'protobuf',
-    'tiktoken',
-    'sentencepiece'  
+    'tiktoken' 
 }
 installed = {dist.metadata['Name'].lower() for dist in distributions()}
 missing = required - installed
