@@ -6,7 +6,14 @@ from flask import Flask, request, jsonify
 #from mistral import call_mistral
 from sentiment import analyze_sentiment
 
-required = {'transformers', 'torch', 'scikit-learn', 'protobuf'}
+required = {
+    'transformers',
+    'torch',
+    'scikit-learn',
+    'protobuf',
+    'tiktoken',
+    'sentencepiece'  
+}
 installed = {dist.metadata['Name'].lower() for dist in distributions()}
 missing = required - installed
 
