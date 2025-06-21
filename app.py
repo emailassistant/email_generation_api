@@ -6,20 +6,6 @@ from flask import Flask, request, jsonify
 #from mistral import call_mistral
 from sentiment import analyze_sentiment
 
-required = {
-    'transformers',
-    'torch',
-    'scikit-learn',
-    'protobuf',
-    'tiktoken' 
-}
-installed = {dist.metadata['Name'].lower() for dist in distributions()}
-missing = required - installed
-
-if missing:
-    print(f"Installing missing packages: {missing}")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", *missing])
-
 app = Flask(__name__)
 
 @app.route("/email-event", methods=["POST"])
